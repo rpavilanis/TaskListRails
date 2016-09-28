@@ -15,26 +15,24 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    # Task.destroy{}
+    @task = Task.find(params[:id])
+    @task.destroy
+
+    redirect_to action: "index"
+
   end
 
   def edit
+    @task = Task.find(params[:id])
   end
 
   def show
-    @tasks = Task.all
-    @mytask = nil
+    @task = Task.find(params[:id])
 
-    @tasks.each do |task|
-      number = params[:id].to_i
-      if number == task[:id]
-        @mytask = task
-      end
+    if @task == nil
+      render :file => 'public/404.html',
+        :status => :not_found, :layout => false
     end
-      if @mytask == nil
-        render :file => 'public/404.html',
-          :status => :not_found, :layout => false
-      end
   end
 
   # def self.alltasks

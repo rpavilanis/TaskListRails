@@ -1,16 +1,16 @@
 <section>
-  <h1>  Task Name: <%= @mytask[:title]%></h1>
-  <h3> Description: <%= @mytask[:description] %> </h3>
+  <h1>  Task Name: <%= @task[:title]%></h1>
+  <h3> Description: <%= @task[:description] %> </h3>
   <h4> Completed?
-  <% if @mytask[:completion_status] == true %>
+  <% if @task[:completion_status] == true %>
     <%= "Yes" %>
   <% else %>
     <%= "Not yet completed" %>
   <% end %>
 
-  <h4> Completed Time and Date: <%= @mytask[:completed_at] %></h4>
-  <%= link_to( "Edit", edit_path(@mytask[:id]) ) %>
+  <h4> Completed Time and Date: <%= @task[:completed_at] %></h4>
+  <%= link_to( "Edit", edit_path(@task[:id]) ) %>
 
-  <%= link_to( "Delete", delete_path(@mytask[:id]), method: :delete ) %>
+  <%= link_to( "Delete", delete_path(@task[:id]), method: :delete, data: { confirm: 'Are you sure?' } ) %>
   <!-- link that someone can click on - says edit_path instead of show_path because the page is called edit -->
 </section>
