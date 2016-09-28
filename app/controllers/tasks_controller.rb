@@ -12,6 +12,13 @@ class TasksController < ApplicationController
   end
 
   def update
+    @task = Task.find(params[:id])
+
+    if @task.update(title: params[:title], description: params[:description])
+      redirect_to action: "show"
+    else
+      render 'edit'
+    end
   end
 
   def destroy
