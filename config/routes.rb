@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root to: "posts#index"
 
-  get 'tasks/index'
+  get 'tasks/index', as: 'index'
 
   get 'tasks/new'=> "tasks#new", as: "new"
 

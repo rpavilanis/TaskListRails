@@ -1,9 +1,15 @@
-<h1>Welcome to Your Tasks</h1>
+<h3>Welcome to Your Tasks</h3>
 
 <% @tasks.each do |task| %>
 
 <section>
-  <h2> <%= link_to(task[:title], show_path(task[:id])) %></h2>
+  <ul>
+    <li>
+    <h4> <%= link_to(task[:title], show_path(task[:id])) %></h4>
+    </li>
+  </ul>
 </section>
 
 <% end %>
+
+</form>
