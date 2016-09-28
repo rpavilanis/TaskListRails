@@ -11,7 +11,7 @@ class TasksController < ApplicationController
     @title = params[:title]
     @description = params[:description]
     @completion_status = params[:completion_status]
-    @completion_date = params[:completion_date]
+    @completion_date = params[:completed_at]
   end
 
   def update
@@ -41,9 +41,9 @@ class TasksController < ApplicationController
 
   def self.alltasks
   [
-    {id: 1, title: "Clean Bathroom", description: "wash towels, scour sink, clean bathtub", completion_status: true, completion_date:Time.now},
+    {id: 1, title: "Clean Bathroom", description: "wash towels, scour sink, clean bathtub", completion_status: true, completed_at:Time.now},
     {id: 2, title: "Read", description: "read for 20 minutes", completion_status: false},
-    {id: 3, title: "Exercise", description: "yoga, run for 30 minutes", completion_status: true, completion_date:Time.now}
+    {id: 3, title: "Exercise", description: "yoga, run for 30 minutes", completion_status: true, completed_at:Time.now}
   ]
 
   end

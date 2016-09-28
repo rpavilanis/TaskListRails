@@ -8,7 +8,7 @@
     <%= "Not yet completed" %>
   <% end %>
 
-  <h4> Completed Time and Date: <%= @mytask[:completion_date] %></h4>
+  <h4> Completed Time and Date: <%= @mytask[:completed_at] %></h4>
   <%= link_to( "Edit", edit_path(@mytask[:id]) ) %>
 
   <%= link_to( "Delete", delete_path(@mytask[:id]), method: :delete ) %>
