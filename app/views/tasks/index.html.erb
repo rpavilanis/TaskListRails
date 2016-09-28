@@ -1,2 +1,11 @@
-<h1>Tasks#index</h1>
-<p>Find me in app/views/tasks/index.html.erb</p>
+<h1>Welcome to Your Tasks</h1>
+
+<% @tasks.each do |task| %>
+
+<section>
+  <h2> <%= link_to(task[:title], show_path(task[:id])) %></h2>
+</section>
+
+<% end %>
+
+<h4> <%= link_to("Add New Task", new_path(@mytask[:id]) %></h4>

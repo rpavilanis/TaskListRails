@@ -1,2 +1,16 @@
-<h1>Tasks#show</h1>
-<p>Find me in app/views/tasks/show.html.erb</p>
+<section>
+  <h1>  Task Name: <%= @mytask[:title]%></h1>
+  <h3> Description: <%= @mytask[:description] %> </h3>
+  <h4> Completed?
+  <% if @mytask[:completion_status] == true %>
+    <%= "Yes" %>
+  <% else %>
+    <%= "Not yet completed" %>
+  <% end %>
+
+  <h4> Completed Time and Date: <%= @mytask[:completion_date] %></h4>
+  <%= link_to( "Edit", edit_path(@mytask[:id]) ) %>
+
+  <%= link_to( "Delete", delete_path(@mytask[:id]), method: :delete ) %>
+  <!-- link that someone can click on - says edit_path instead of show_path because the page is called edit -->
+</section>
