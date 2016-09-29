@@ -11,7 +11,7 @@
     </li>
 
     <ul>
-      <li><%= button_to 'Complete', complete_path(task), :class => 'button' %></li>
+      <li><%= button_to 'Complete', complete_path(task), :class => 'button', method: :patch, data: { flash: "Task has been updated"} %></li>
       <li><%= button_to 'Edit', edit_path(task), :class => 'button' %></li>
       <li><%= button_to 'Delete', delete_path(task), :class => 'button',
             method: :delete,

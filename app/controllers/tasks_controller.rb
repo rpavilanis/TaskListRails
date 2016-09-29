@@ -53,8 +53,10 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
 
     @task.update_attribute(:completed_at, Time.now)
+    @task.update_attribute(:completion_status, true)
 
-		redirect_to action: 'index', notice: "task item completed"
+
+		redirect_to action: 'index'
 
   end
 
