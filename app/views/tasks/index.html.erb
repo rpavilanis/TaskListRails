@@ -4,15 +4,16 @@
 
 <section>
   <ul>
-    <li>
-      <%= check_box_tag(task[:completion_status]) %>
-      <%= label_tag(task[:completion_status], link_to(task[:title], show_path(task[:id]))
+    <li class="font-style">
+      <!-- <%= check_box_tag(task.completion_status) %> -->
+      <%= label_tag(task.completion_status, link_to(task.title, show_path(task.id))
       ) %>
     </li>
 
     <ul>
-      <li><%= button_to 'Edit', edit_path(task) %></li>
-      <li><%= button_to 'Delete', delete_path(task),
+      <li><%= button_to 'Complete', complete_path(task), :class => 'button' %></li>
+      <li><%= button_to 'Edit', edit_path(task), :class => 'button' %></li>
+      <li><%= button_to 'Delete', delete_path(task), :class => 'button',
             method: :delete,
             data: { confirm: 'Are you sure?' } %></li>
     </ul>

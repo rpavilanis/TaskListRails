@@ -1,17 +1,17 @@
 <section>
-  <h1>  Task Name: <%= @task[:title]%></h1>
-  <h3> Description: <%= @task[:description] %> </h3>
+  <h3>  Task Name: <%= @task.title%></h3>
+  <h4> Description: <%= @task.description %> </h4>
   <h4> Completed?
-  <% if @task[:completion_status] == true %>
+  <% if @task.completion_status == true %>
     <%= "Yes" %>
   <% else %>
     <%= "Not yet completed" %>
   <% end %>
 
-  <h4> Completed Time and Date: <%= @task[:completed_at] %></h4>
+  <h4> Completed Time and Date: <%= @task.completed_at %></h4>
   <ul>
-    <li><%= button_to 'Edit', edit_path(@task) %>  </li>
-    <li><%= button_to 'Delete', delete_path(@task),
+    <li><%= button_to 'Edit', edit_path(@task), :class => 'button'  %>  </li>
+    <li><%= button_to 'Delete', delete_path(@task), :class => 'button',
         method: :delete,
         data: { confirm: 'Are you sure?' } %> </li>
   </ul>
