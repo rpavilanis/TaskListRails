@@ -24,6 +24,7 @@ class TasksController < ApplicationController
     if @task.update(title: params[:title], description: params[:description])
       redirect_to action: "show"
     else
+      # another way to redirect
       render 'edit'
     end
   end
@@ -55,8 +56,8 @@ class TasksController < ApplicationController
     @task.update_attribute(:completed_at, Time.now)
     @task.update_attribute(:completion_status, true)
 
-
 		redirect_to action: 'index'
+
 
   end
 

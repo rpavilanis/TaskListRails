@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   post 'tasks/create' => 'tasks#create', as: "create"
 
   get 'tasks/update'
-
   put "tasks/:id/update" => "tasks#update", as: "update"
 
   get 'tasks/show/:id' => 'tasks#show', as: 'show'
@@ -18,8 +17,6 @@ Rails.application.routes.draw do
   post "tasks/:id/edit" => "tasks#edit", as: "edit"
 
   patch 'tasks/:id/completion_status' => 'tasks#completion_status', as: "complete"
-
-  # post 'tasks/:id/completion_status' => 'tasks#completion_status', as: "completed"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

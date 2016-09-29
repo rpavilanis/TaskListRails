@@ -99,7 +99,6 @@ h3 {
   font-size: 2.5em;
   text-align: left;
   padding-top: 10px;
-  /*width: 30%;*/
   margin: 5px 2px 5px 2px;
 }
 
@@ -110,26 +109,7 @@ h3 {
 /************************************/
 /* FOOTER */
 /************************************/
-footer {
-  clear: both;
-  width: 100%;
-  margin: 0 auto;
-  margin-top: 1%;
-  height: 3%;
-  bottom:0;
-}
-
-footer section {
-  float: right;
-  width: 10%;
-  margin: 0;
-}
-
-footer section a {
-  padding: 0 1% .5% 1%;
-}
 
 footer p {
   float: left;
-  /*width: 90%;*/
 }

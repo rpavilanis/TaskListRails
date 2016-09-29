@@ -5,13 +5,17 @@
 <section>
   <ul>
     <li class="font-style">
-      <!-- <%= check_box_tag(task.completion_status) %> -->
-      <%= label_tag(task.completion_status, link_to(task.title, show_path(task.id))
-      ) %>
+      <% if task.completion_status == true %>
+        <strike><%= label_tag(task.completion_status, link_to(task.title, show_path(task.id))
+        ) %></strike>
+      <% else %>
+        <%= label_tag(task.completion_status, link_to(task.title, show_path(task.id))
+        ) %>
+      <% end %>
     </li>
 
     <ul>
-      <li><%= button_to 'Complete', complete_path(task), :class => 'button', method: :patch, data: { flash: "Task has been updated"} %></li>
+      <li><%= button_to 'Complete', complete_path(task), :class => 'button', method: :patch %></li>
       <li><%= button_to 'Edit', edit_path(task), :class => 'button' %></li>
       <li><%= button_to 'Delete', delete_path(task), :class => 'button',
             method: :delete,
