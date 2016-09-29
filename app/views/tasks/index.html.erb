@@ -1,16 +1,21 @@
-<h3>Welcome to Your Tasks</h3>
+<h3>Daily Task List</h3>
 
 <% @tasks.each do |task| %>
 
 <section>
   <ul>
     <li>
-    <h4> <%= link_to(task[:title], show_path(task[:id])) %></h4>
-    <p><%= link_to 'Edit', edit_path(task) %>
-    <%= link_to 'Delete', delete_path(task),
-            method: :delete,
-            data: { confirm: 'Are you sure?' } %></p>
+      <%= check_box_tag(task[:completion_status]) %>
+      <%= label_tag(task[:completion_status], link_to(task[:title], show_path(task[:id]))
+      ) %>
     </li>
+
+    <ul>
+      <li><%= button_to 'Edit', edit_path(task) %></li>
+      <li><%= button_to 'Delete', delete_path(task),
+            method: :delete,
+            data: { confirm: 'Are you sure?' } %></li>
+    </ul>
   </ul>
 </section>
 

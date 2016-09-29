@@ -42,6 +42,18 @@ class TasksController < ApplicationController
     end
   end
 
+  def completion_status
+    @task = Task.find(params[:id])
+
+    if @task.completion_status == true
+      @task.completion_date = Time.now
+    else
+      redirect_to action: "index"
+    end
+
+  end
+
+  # used this before creating model
   # def self.alltasks
   # [
   #   {id: 1, title: "Clean Bathroom", description: "wash towels, scour sink, clean bathtub", completion_status: true, completed_at:Time.now},

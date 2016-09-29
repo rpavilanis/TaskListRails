@@ -9,8 +9,11 @@
   <% end %>
 
   <h4> Completed Time and Date: <%= @task[:completed_at] %></h4>
-  <%= link_to( "Edit", edit_path(@task[:id]) ) %>
-
-  <%= link_to( "Delete", delete_path(@task[:id]), method: :delete, data: { confirm: 'Are you sure?' } ) %>
+  <ul>
+    <li><%= button_to 'Edit', edit_path(@task) %>  </li>
+    <li><%= button_to 'Delete', delete_path(@task),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %> </li>
+  </ul>
   <!-- link that someone can click on - says edit_path instead of show_path because the page is called edit -->
 </section>
