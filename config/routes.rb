@@ -5,11 +5,11 @@ Rails.application.routes.draw do
 
   get 'tasks/new'=> "tasks#new", as: "new"
 
-  post 'tasks/create' => 'tasks#create'
+  post 'tasks/create' => 'tasks#create', as: "create"
 
   get 'tasks/update'
 
-  put "tasks/:id/update" => "tasks#update"
+  put "tasks/:id/update" => "tasks#update", as: "update"
 
   get 'tasks/show/:id' => 'tasks#show', as: 'show'
 

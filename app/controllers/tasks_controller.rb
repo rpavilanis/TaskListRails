@@ -4,11 +4,18 @@ class TasksController < ApplicationController
   end
 
   def new
+    @mytask = Task.new
   end
 
   def create
-    Task.create(title: params[:title], description: params[:description])
+    @params = params
+    @mytask = Task.new
+    @mytask.title = params[:task][:title]
+    @mytask.description = params[:task][:description]
+    @mytask.save
     redirect_to action: "index"
+
+    # Task.create(title: params[:title], description: params[:description])
   end
 
   def update

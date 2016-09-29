@@ -1,6 +1,23 @@
 <h3>Create a New Task</h3>
 
-<form name="post" action="create" method="post"> <!--because post is http verb we are using-->
+<%= form_for @mytask,
+  url: create_path do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+
+  <%= f.submit %>
+
+  <%= tag(:input, :type => "hidden",
+    :name => request_forgery_protection_token.to_s,
+    :value => form_authenticity_token) %>
+
+  <% end %>
+
+
+<!-- <form name="post" action="create" method="post">
 
   <label for="title">Task Title:</label>
   <input type="text" name="title" id="title">
@@ -14,4 +31,4 @@
     :value => form_authenticity_token) %>
 
   <button type="submit">Submit</button>
-</form>
+</form> -->
