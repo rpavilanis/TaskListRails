@@ -58,7 +58,6 @@ class TasksController < ApplicationController
 
 		redirect_to action: 'index'
 
-
   end
 
   # used this before creating model
