@@ -1,21 +1,21 @@
 Rails.application.routes.draw do
   root to: "tasks#index"
-  
-  get 'people/index'
 
-  get 'people/show'
+  # get 'people/index', as: 'people-index'
+  #
+  # get 'people/show/:id', 'people#show', as: 'people-show'
+  #
+  # get 'people/edit'
+  #
+  # get 'people/create'
+  #
+  # get 'people/new'
+  #
+  # get 'people/update'
+  #
+  # get 'people/destroy'
 
-  get 'people/edit'
-
-  get 'people/create'
-
-  get 'people/new'
-
-  get 'people/update'
-
-  get 'people/destroy'
-
-  get 'tasks/index', as: 'index'
+  get 'tasks/:id/index' => "tasks#index", as: 'index'
 
   get 'tasks/new'=> "tasks#new", as: "new"
 

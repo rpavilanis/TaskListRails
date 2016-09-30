@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   def index
-    @tasks = Task.all
+    @tasks = Task.where(person_id: params[:id])
   end
 
   def new
@@ -52,7 +52,7 @@ class TasksController < ApplicationController
 
   def completion_status
     @task = Task.find(params[:id])
-  
+
     @task.update_attribute(:completed_at, Time.now)
     @task.update_attribute(:completion_status, true)
 
