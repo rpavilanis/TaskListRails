@@ -1,5 +1,19 @@
 Rails.application.routes.draw do
-  root to: "posts#index"
+  root to: "tasks#index"
+  
+  get 'people/index'
+
+  get 'people/show'
+
+  get 'people/edit'
+
+  get 'people/create'
+
+  get 'people/new'
+
+  get 'people/update'
+
+  get 'people/destroy'
 
   get 'tasks/index', as: 'index'
 

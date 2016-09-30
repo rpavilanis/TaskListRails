@@ -51,7 +51,7 @@ font: normal normal 14px/1 "Josefin Sans";
 
 .button:hover {
   background-color: #fff796;
-  color: #b24569;
+  color: #FF7CA7;
 }
 
 ul li {
@@ -84,12 +84,7 @@ input {
 
 .navigation-container li a:hover {
   /*color: #ff7ca7;*/
-  color: #b24569;
-}
-
-a:hover {
-  /*color: #c98f8f;*/
-  color: #4fb1cc;
+  color: #FF7CA7;
 }
 
 a:link {
@@ -100,6 +95,7 @@ a:link {
 /************************************/
 /* MAIN BODY SECTION - INDEX.HTML */
 /************************************/
+
 body {
   margin-left: .5%;
   margin-right: .5%;
@@ -115,6 +111,14 @@ h3 {
 
 .font-style {
   font-size: 2em;
+}
+
+.font-style a:link {
+  color: #FF7CA7;
+}
+
+.font-style a:hover {
+  color: #4fb1cc;;
 }
 
 /************************************/
