@@ -1,6 +1,8 @@
 class TasksController < ApplicationController
   def index
-    @tasks = Task.where(person_id: params[:id])
+
+    @person = Person.find( params[:person_id].to_i)
+    @tasks = @person.tasks
   end
 
   def new
@@ -42,6 +44,7 @@ class TasksController < ApplicationController
   end
 
   def show
+
     @task = Task.find(params[:id])
 
     if @task == nil

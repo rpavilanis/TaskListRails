@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root to: "tasks#index"
 
-  # get 'people/index', as: 'people-index'
+  get 'people/index', as: 'people-index'
   #
   # get 'people/show/:id', 'people#show', as: 'people-show'
   #
@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   #
   # get 'people/destroy'
 
-  get 'tasks/:id/index' => "tasks#index", as: 'index'
+  get 'tasks/:person_id/index' => "tasks#index", as: 'index'
 
   get 'tasks/new'=> "tasks#new", as: "new"
 
@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   get 'tasks/update'
   put "tasks/:id/update" => "tasks#update", as: "update"
 
-  get 'tasks/show/:id' => 'tasks#show', as: 'show'
+  get 'tasks/show/:id/' => 'tasks#show', as: 'show'
 
   delete 'tasks/:id/destroy' => "tasks#destroy", as: "delete"
 

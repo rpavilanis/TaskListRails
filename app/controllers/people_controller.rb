@@ -1,6 +1,10 @@
 class PeopleController < ApplicationController
   def index
     @people = Person.all
+
+    @tasks = Task.where(person_id: params[:person_id])
+    @incomplete_tasks = 0
+
   end
 
   def show
@@ -17,6 +21,11 @@ class PeopleController < ApplicationController
 
   def create
     @person = Person.new
+    @params = params
+    @person.name = params[:person][:name]
+
+    @person.save
+    redirect_to action: "people-index"
   end
 
   def new
