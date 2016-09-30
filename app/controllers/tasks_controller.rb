@@ -7,6 +7,7 @@ class TasksController < ApplicationController
 
   def new
     @mytask = Task.new
+    @people = Person.all
   end
 
   def create
@@ -14,6 +15,7 @@ class TasksController < ApplicationController
     @mytask = Task.new
     @mytask.title = params[:task][:title]
     @mytask.description = params[:task][:description]
+    @mytask.person_id = params[:task][:person_id]
     @mytask.save
     redirect_to action: "index"
 

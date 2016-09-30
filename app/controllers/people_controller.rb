@@ -1,4 +1,5 @@
 class PeopleController < ApplicationController
+
   def index
     @people = Person.all
 
@@ -25,7 +26,7 @@ class PeopleController < ApplicationController
     @person.name = params[:person][:name]
 
     @person.save
-    redirect_to action: "people-index"
+    redirect_to action: "index"
   end
 
   def new
@@ -37,4 +38,10 @@ class PeopleController < ApplicationController
 
   def destroy
   end
+
+  private
+  def action
+    render :layout => 'people'
+  end
+
 end

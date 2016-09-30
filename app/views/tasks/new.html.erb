@@ -8,6 +8,8 @@
   <%= f.label :description %>
   <%= f.text_area :description %>
 
+  <%= select("person", "person_id", @people.collect {|p| [ p.name, p.id ] }, { :include_blank => true }) %>
+
   <%= f.submit :class=>"button" %>
 
   <%= tag(:input, :type => "hidden",

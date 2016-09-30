@@ -9,7 +9,7 @@
   <% end %>
 
 <ul>
-  <li><%= person.name %>: <%= @incomplete_tasks %> </li>
+  <li class="font-style"><%= link_to(person.name, index_path(person.id)) %>: <%= @incomplete_tasks %> </li>
 </ul>
 
 <% end  %>

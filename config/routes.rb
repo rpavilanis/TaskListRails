@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: "tasks#index"
+  root to: "people#index"
 
   get 'people/index', as: 'people-index'
   #
@@ -7,9 +7,9 @@ Rails.application.routes.draw do
   #
   # get 'people/edit'
   #
-  # get 'people/create'
-  #
-  # get 'people/new'
+  post 'people/create' => 'people#create', as: "createperson"
+
+  get 'people/new' => "people#new", as: "newperson"
   #
   # get 'people/update'
   #
@@ -17,9 +17,9 @@ Rails.application.routes.draw do
 
   get 'tasks/:person_id/index' => "tasks#index", as: 'index'
 
-  get 'tasks/new'=> "tasks#new", as: "new"
+  get 'tasks/new/'=> "tasks#new", as: "new"
 
-  post 'tasks/create' => 'tasks#create', as: "create"
+  post 'tasks/create/' => 'tasks#create', as: "create"
 
   get 'tasks/update'
   put "tasks/:id/update" => "tasks#update", as: "update"

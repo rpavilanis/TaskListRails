@@ -1,2 +1,14 @@
-<h1>People#new</h1>
-<p>Find me in app/views/people/new.html.erb</p>
+<h3>Create a New Person</h3>
+
+<%= form_for @person,
+  url: createperson_path do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.submit :class=>"button" %>
+
+  <%= tag(:input, :type => "hidden",
+    :name => request_forgery_protection_token.to_s,
+    :value => form_authenticity_token) %>
+
+  <% end %>
