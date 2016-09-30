@@ -28,6 +28,12 @@ font: normal normal 14px/1 "Josefin Sans";
   margin: 0;
 }
 
+#logo {
+  padding-top: 15px;
+  padding-left: .09%;
+  float: left;
+}
+
 /************************************/
 /* FORMS and BUTTONS */
 /************************************/
