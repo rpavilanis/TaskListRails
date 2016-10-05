@@ -48,7 +48,7 @@ class TasksController < ApplicationController
               :status => :not_found
     end
 
-    if @task.update(title: params[:title], description: params[:description])
+    if @task.update(title: params[:task][:title], description: params[:task][:description])
       redirect_to action: "show"
     else
       # another way to redirect
