@@ -1,3 +1,21 @@
+## What went well?
+I really liked this assignment, because it aligns with some of my personal interests and capstone ideas.  I am loving Ruby on Rails.  Even though we are just beginning to learn about the functionality of Rails, it already feels so much more powerful and complete than anything we have done before.  I love combining many of the concepts we have learned thus far into a single project.  I think this project also made me feel more confident and secure in some of the previously covered concepts like CSS and Ruby.
+
+Since I finished my project early, I was really excited about adding User functionality.  I decided to let my curiousity lead me down the path of trying to add some of those features, and I am really glad I did.  I was able to get individualized task lists working for various users, and also created a different layout page for the user home screen and the task home screen. Normally I am too nervous to experiment because I don't want to break anything.  Although I did end up breaking several things (I can no longer add a new task or mark a task as complete, because these features are not linked to a specific user), I also learned a lot.  I'm excited to learn more about adding users and user relationships in lectures this week, and I am hoping to go back in to make everything work again.
+
+## What are you still working on understanding better?
+
+I am definitely looking forward to learning more about how to actually create different user views.  
+
+I also feel like CSS is an area where I kind of stumble around blindly until I get something that looks good to me.  I have used similar headers and navigation bars in my projects, because I found something that works and I am nervous to change that too much.  In my next project, I want to push myself to do something totally different (maybe a side navigation) so that I can continue building my skills in this area. 
+
+## What did your chair pair do differently?
+
+My chair pair had the details of each of here tasks displayed on the main page - I liked this because all of the detail is right there.  In my project, it felt like an additional unneeded step for users to have to click on a task before seeing the description. 
+
+## 
+
+
 # Task List Rails ✅
 We are going to build a Task List in Rails. This web application will enable us to keep track of list of tasks with the functionality to add, edit and remove tasks from a list.
 
