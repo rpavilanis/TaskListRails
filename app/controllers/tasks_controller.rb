@@ -6,31 +6,21 @@ class TasksController < ApplicationController
   end
 
   def new
-    @mytask = Task.new
+    @task = Task.new
     @people = Person.all
   end
 
   def create
     @params = params
-    @mytask = Task.new
-    @mytask.title = params[:task][:title]
-    @mytask.description = params[:task][:description]
-    @mytask.person_id = params[:task][:person_id]
-    @mytask.save
-    redirect_to action: "index"
 
-    # Task.create(title: params[:title], description: params[:description])
-  end
+    @task = Task.new
+    @task.title = params[:task][:title]
+    @task.description = params[:task][:description]
+    @task.person_id = params[:person_id].to_i
+    @task.save
 
-  def update
-    @task = Task.find(params[:id])
+    redirect_to index_path(@task.id, params[:person_id])
 
-    if @task.update(title: params[:title], description: params[:description])
-      redirect_to action: "show"
-    else
-      # another way to redirect
-      render 'edit'
-    end
   end
 
   def destroy
@@ -43,7 +33,29 @@ class TasksController < ApplicationController
 
   def edit
     @task = Task.find(params[:id])
+
+    if @task == nil
+          render :file => 'public/404.html',
+              :status => :not_found
+    end
   end
+
+  def update
+    @task = Task.find(params[:id])
+
+    if @task == nil
+          render :file => 'public/404.html',
+              :status => :not_found
+    end
+
+    if @task.update(title: params[:title], description: params[:description])
+      redirect_to action: "show"
+    else
+      # another way to redirect
+      render 'edit'
+    end
+  end
+
 
   def show
 

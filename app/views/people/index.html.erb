@@ -2,14 +2,18 @@
 
 <% @people.each do |person| %>
 
-  <% @tasks.each do |task| %>
+<!-- couldn't get my counter to work...just displayed zeroes  -->
+  <!-- <% @tasks.each do |task| %>
     <% if task.completion_status == false %>
-      <% @incomplete_tasks += 1 %>
+      <% @incomplete_tasks = counter + 1 %>
     <% end %>
-  <% end %>
+  <% end %> -->
 
 <ul>
-  <li class="font-style"><%= link_to(person.name, index_path(person.id)) %>: <%= @incomplete_tasks %> </li>
+  <li class="font-style"><%= link_to(person.name, index_path(person.id)) %> </li>
+
+  <!-- with counter display that isn't working:
+  <li class="font-style"><%= link_to(person.name, index_path(person.id)) %>: <%= @incomplete_tasks %> </li> -->
 </ul>
 
 <% end  %>

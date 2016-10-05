@@ -1,0 +1,15 @@
+<%= form_for @task,
+  url: action_name do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+
+  <%= f.submit :class=>"button" %>
+
+  <%= tag(:input, :type => "hidden",
+    :name => request_forgery_protection_token.to_s,
+    :value => form_authenticity_token) %>
+
+  <% end %>
