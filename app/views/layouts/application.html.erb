@@ -14,7 +14,7 @@
       <div class="navigation-container">
         <ul>
           <li><h1><%= link_to("Users", root_path) %></li>
-          <li><h1><%= link_to("Add New Task", new_path) %></h1></li>
+          <li><h1><%= link_to("Add New Task", new_path((params[:person_id].to_i))) %></h1></li>
         </ul>
       </div>
     </nav>
