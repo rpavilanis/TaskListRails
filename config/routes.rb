@@ -17,9 +17,9 @@ Rails.application.routes.draw do
 
   get 'tasks/:person_id/index' => "tasks#index", as: "index"
 
-  get 'tasks/new/'=> "tasks#new", as: "new"
+  get 'tasks/:person_id/new/'=> "tasks#new", as: "new"
 
-  post 'tasks/create/' => 'tasks#create', as: "create"
+  post 'tasks/:person_id/create' => 'tasks#create', as: "create"
 
   # get 'tasks/update'
   get "tasks/:id/edit" => "tasks#edit", as: "edit"

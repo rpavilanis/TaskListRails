@@ -6,8 +6,8 @@ class TasksController < ApplicationController
   end
 
   def new
-    @task = Task.new
-    @people = Person.all
+    @task = Task.new(:person_id => params[:person_id].to_i)
+    # @people = Person.all
   end
 
   def create
@@ -16,10 +16,12 @@ class TasksController < ApplicationController
     @task = Task.new
     @task.title = params[:task][:title]
     @task.description = params[:task][:description]
-    # @task.person_id = params[:person_id].to_i
+    @task.person_id = params[:person_id].to_i
     @task.save
 
-    redirect_to index_path( params[:person_id])
+
+
+    redirect_to index_path( @task.person_id)
 
   end
 
