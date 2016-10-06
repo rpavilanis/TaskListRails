@@ -16,10 +16,10 @@ class TasksController < ApplicationController
     @task = Task.new
     @task.title = params[:task][:title]
     @task.description = params[:task][:description]
-    @task.person_id = params[:person_id].to_i
+    # @task.person_id = params[:person_id].to_i
     @task.save
 
-    redirect_to index_path(@task.id, params[:person_id])
+    redirect_to index_path( params[:person_id])
 
   end
 
@@ -27,8 +27,7 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     @task.destroy
 
-    redirect_to action: "index"
-
+    redirect_to root_path
   end
 
   def edit
