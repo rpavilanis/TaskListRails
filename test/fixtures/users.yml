@@ -1,15 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  user_id: MyString
-  name: MyString
-  email: MyString
-  avatar: MyString
-  follower_count: 1
+ada:
+  id: 1
+  user_id: 12322
+  name: "Ada"
+  email: "ada@adadevelopersacademy.org"
+  provider: github
 
-two:
-  user_id: MyString
-  name: MyString
-  email: MyString
-  avatar: MyString
-  follower_count: 1
+
+lisa:
+  id: 2
+  user_id: 12555
+  name: "Lisa"
+  email: "lisa@adadevelopersacademy.org"
+  provider: github
