@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+# for oAuth github Authentication
+gem "omniauth"
+gem "omniauth-github"
+# helps with console
 gem 'awesome_print'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.7'
@@ -35,6 +39,7 @@ gem 'rails_12factor', group: :production
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'dotenv-rails'
 
 end
 

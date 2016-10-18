@@ -1,4 +1,4 @@
-<h2>Hello, <%= @person.name %>! </h2>
+<h2>Hello, <%= @user.name %>! </h2>
 <h3>Daily Task List</h3>
 
 <% @tasks.each do |task| %>
@@ -16,9 +16,9 @@
     </li>
 
     <ul>
-      <li><%= button_to 'Complete', complete_path(task, params[:person_id]), :class => 'button', method: :patch %></li>
-      <li><%= button_to 'Edit', edit_path(task, params[:person_id]), :class => 'button', method: :get %></li>
-      <li><%= button_to 'Delete', delete_path(task, params[:person_id]), :class => 'button',
+      <li><%= button_to 'Complete', complete_path(task, params[:user_id]), :class => 'button', method: :patch %></li>
+      <li><%= button_to 'Edit', edit_path(task, params[:user_id]), :class => 'button', method: :get %></li>
+      <li><%= button_to 'Delete', delete_path(task, params[:user_id]), :class => 'button',
             method: :delete,
             data: { confirm: 'Are you sure?' } %></li>
     </ul>
