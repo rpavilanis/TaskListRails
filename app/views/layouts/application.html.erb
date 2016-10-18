@@ -13,8 +13,9 @@
       <img id="logo" src="/Logo.png" alt="Logo">
       <div class="navigation-container">
         <ul>
-          <li><h1><%= link_to("Users", root_path) %></li>
-          <li><h1><%= link_to("Add New Task", new_path((params[:person_id].to_i))) %></h1></li>
+          <li><h1><%= link_to("Login via Github", "/auth/github") %></li>
+          <li><h1><%= link_to("Logout", 'destroy-sessions', :controller => "sessions", :action => :destroy) %></h1></li>
+          <!-- <li><h1><%= link_to("Add New Task", new_path((params[:user_id].to_i))) %></h1></li> -->
         </ul>
       </div>
     </nav>
