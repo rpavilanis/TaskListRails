@@ -1,20 +1,26 @@
-<section>
-  <% if @user %>
-  <h1>Welcome <%= @user.name %></h1>
-  <%= image_tag(@user.avatar, alt:"image of user", :class => "style_image") %>
-  <% else %>
-  <h1>Please login to begin tracking your habits with the Personal Habit Tracker.</h1>
-  <% end %>
-  <% if flash[:notice] %>
-    <p class="flash-notice"><%= flash[:notice] %></p>
-  <% end  %>
-</section>
-<section>
-  <% if @user %>
-  <h2>Manage Your Tasks</h2>
-  <ul>
-    <li><%= link_to "See Current Tasks", index_path(@user.id), controller: 'tasks' %></li>
-    <li><%= "Add a New Task" %></li>
-  </ul>
-  <% end  %>
-</section>
+<div class="row style-index">
+  <section class="small-6 columns first-half">
+    <% if @user %>
+    <h3>Welcome <%= @user.name %></h3>
+    <div id="center-image">
+      <%= image_tag(@user.avatar, alt:"image of user", :class => "style-image") %>
+    </div>
+    <% else %>
+    <h1>Welcome!</h1>
+    <h2>Please login via Github to begin tracking your habits with the Personal Habit Tracker.</h2>
+    <% end %>
+    <% if flash[:notice] %>
+      <p class="flash-notice"><%= flash[:notice] %></p>
+    <% end  %>
+  </section>
+
+  <section class="small-6 columns second-half">
+    <% if @user %>
+    <ul>
+      <li><h3>Manage Your Tasks</h3></li>
+      <li><h4><%= link_to "See Current Tasks", index_path(@user.id), controller: 'tasks', class: 'font-index' %></h4></li>
+      <li><h4><%= link_to "Add a New Task", new_path(@user.id), controller: 'tasks', class: 'font-index' %></h4></li>
+    </ul>
+    <% end  %>
+  </section>
+</div>

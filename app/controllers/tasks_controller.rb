@@ -15,7 +15,7 @@ class TasksController < ApplicationController
     @task = Task.new
     @task.title = params[:task][:title]
     @task.description = params[:task][:description]
-    @task.person_id = params[:person_id].to_i
+    @task.user_id = params[:user_id].to_i
     @task.save
 
     redirect_to index_path( @task.user_id)
@@ -74,14 +74,4 @@ class TasksController < ApplicationController
 		redirect_to action: 'index'
 
   end
-
-  # used this before creating model
-  # def self.alltasks
-  # [
-  #   {id: 1, title: "Clean Bathroom", description: "wash towels, scour sink, clean bathtub", completion_status: true, completed_at:Time.now},
-  #   {id: 2, title: "Read", description: "read for 20 minutes", completion_status: false},
-  #   {id: 3, title: "Exercise", description: "yoga, run for 30 minutes", completion_status: true, completed_at:Time.now}
-  # ]
-  #
-  # end
 end

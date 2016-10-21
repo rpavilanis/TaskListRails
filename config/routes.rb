@@ -2,22 +2,6 @@ Rails.application.routes.draw do
   root to: "homepages#index"
 
   resources :sessions
-  #
-  # delete 'sessions/destroy', 'sessions#destroy', as: 'destroy-sessions'
-
-  # get 'people/index', as: 'people-index'
-  #
-  # get 'people/show/:id', 'people#show', as: 'people-show'
-  #
-  # get 'people/edit'
-  #
-  # post 'people/create' => 'people#create', as: "createperson"
-
-  # get 'people/new' => "people#new", as: "newperson"
-  #
-  # get 'people/update'
-  #
-  # get 'people/destroy'
 
   get 'tasks/:user_id/index' => "tasks#index", as: "index"
 
@@ -25,7 +9,6 @@ Rails.application.routes.draw do
 
   post 'tasks/:user_id/create' => 'tasks#create', as: "create"
 
-  # get 'tasks/update'
   get "tasks/:id/edit" => "tasks#edit", as: "edit"
 
   patch "tasks/:id/update/" => "tasks#update", as: "update"
