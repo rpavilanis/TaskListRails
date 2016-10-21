@@ -8,9 +8,8 @@ class ActiveSupport::TestCase
 
   def setup
     OmniAuth.config.test_mode = true
-
-    OmniAuth.config.mock_auth[:github] OmniAuth::AuthHash.new({provider: 'github', user_id: '123545', info: { email: "a@b.com", name: "Ada"}
+    OmniAuth.config.mock_auth[:github] =  OmniAuth::AuthHash.new({provider: 'github', user_id: '123545', info: { email: "a@b.com", name: "Ada"}
     })
-  end 
+  end
   # Add more helper methods to be used by all tests here...
 end
