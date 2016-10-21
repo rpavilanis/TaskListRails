@@ -2,9 +2,12 @@
   <section class="small-6 columns first-half">
     <% if @user %>
     <h3>Welcome <%= @user.name %></h3>
-    <%= image_tag(@user.avatar, alt:"image of user", :class => "style-image") %>
+    <div id="center-image">
+      <%= image_tag(@user.avatar, alt:"image of user", :class => "style-image") %>
+    </div>
     <% else %>
-    <h1>Please login to begin tracking your habits with the Personal Habit Tracker.</h1>
+    <h1>Welcome!</h1>
+    <h2>Please login via Github to begin tracking your habits with the Personal Habit Tracker.</h2>
     <% end %>
     <% if flash[:notice] %>
       <p class="flash-notice"><%= flash[:notice] %></p>

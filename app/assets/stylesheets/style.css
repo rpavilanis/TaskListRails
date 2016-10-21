@@ -123,6 +123,10 @@ h3 {
   border: 7px solid #4fb1cc;
 }
 
+#center-image {
+  padding-left: 14%;
+}
+
 .style-index {
   padding-top: 10%;
 }
@@ -136,7 +140,7 @@ h3 {
 }
 
 .second-half {
-  padding-top: 5%;
+  padding-top: 4%;
 }
 
 .second-half ul li {
