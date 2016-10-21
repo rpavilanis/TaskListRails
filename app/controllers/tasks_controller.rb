@@ -1,13 +1,12 @@
 class TasksController < ApplicationController
   def index
 
-    @person = Person.find( params[:person_id].to_i)
-    @tasks = @person.tasks
+    @user = User.find( params[:user_id].to_i)
+    @tasks = @user.tasks
   end
 
   def new
-    @task = Task.new(:person_id => params[:person_id].to_i)
-    # @people = Person.all
+    @task = Task.new(:user_id => params[:user_id].to_i)
   end
 
   def create
@@ -19,9 +18,7 @@ class TasksController < ApplicationController
     @task.person_id = params[:person_id].to_i
     @task.save
 
-
-
-    redirect_to index_path( @task.person_id)
+    redirect_to index_path( @task.user_id)
 
   end
 
