@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   root to: "homepages#index"
 
-  delete 'sessions/destroy', 'sessions#destroy', as: 'destroy-sessions'
+  resources :sessions
+  #
+  # delete 'sessions/destroy', 'sessions#destroy', as: 'destroy-sessions'
 
   # get 'people/index', as: 'people-index'
   #
@@ -17,11 +19,11 @@ Rails.application.routes.draw do
   #
   # get 'people/destroy'
 
-  get 'tasks/:person_id/index' => "tasks#index", as: "index"
+  get 'tasks/:user_id/index' => "tasks#index", as: "index"
 
-  get 'tasks/:person_id/new/'=> "tasks#new", as: "new"
+  get 'tasks/:user_id/new/'=> "tasks#new", as: "new"
 
-  post 'tasks/:person_id/create' => 'tasks#create', as: "create"
+  post 'tasks/:user_id/create' => 'tasks#create', as: "create"
 
   # get 'tasks/update'
   get "tasks/:id/edit" => "tasks#edit", as: "edit"
@@ -32,12 +34,10 @@ Rails.application.routes.draw do
 
   delete 'tasks/:id/destroy' => "tasks#destroy", as: "delete"
 
-  patch 'tasks/:id/completion_status/:person_id' => 'tasks#completion_status', as: "complete"
+  patch 'tasks/:id/completion_status/:user_id' => 'tasks#completion_status', as: "complete"
 
   get "/auth/:provider/callback" =>  "sessions#create"
 
-
-  get 'sessions/create'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

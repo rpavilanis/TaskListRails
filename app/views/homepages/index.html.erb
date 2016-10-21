@@ -1,9 +1,20 @@
-<% if @user %>
-<h1>Welcome <%= @user.name %></h1>
-<%= image_tag(@user.avatar, alt:"image of user") %>
-<% else %>
-<h1>Please login.</h1>
-<% end %>
-<% if flash[:notice] %>
-  <p class="flash-notice"><%= flash[:notice] %></p>
-<% end  %>
+<section>
+  <% if @user %>
+  <h1>Welcome <%= @user.name %></h1>
+  <%= image_tag(@user.avatar, alt:"image of user", :class => "style_image") %>
+  <% else %>
+  <h1>Please login to begin tracking your habits with the Personal Habit Tracker.</h1>
+  <% end %>
+  <% if flash[:notice] %>
+    <p class="flash-notice"><%= flash[:notice] %></p>
+  <% end  %>
+</section>
+<section>
+  <% if @user %>
+  <h2>Manage Your Tasks</h2>
+  <ul>
+    <li><%= link_to "See Current Tasks", index_path(@user.id), controller: 'tasks' %></li>
+    <li><%= "Add a New Task" %></li>
+  </ul>
+  <% end  %>
+</section>
