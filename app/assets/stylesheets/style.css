@@ -1,10 +1,6 @@
+@import url('foundation.css');
 @import 'https://fonts.googleapis.com/css?family=Amatic+SC|Josefin+Sans';
 
-
-html {
-font: normal normal 14px/1 "Josefin Sans";
-/*, Helvetica, Arial, sans-serif;*/
-}
 /************************************/
 /* NAVIGATION BAR AND HEADER SECTION */
 /************************************/
@@ -87,11 +83,9 @@ input {
   color: #FF7CA7;
 }
 
-a:link {
-  color: #000000;
-  text-decoration: none;
+a:hover {
+  color: #4fb1cc;
 }
-
 /************************************/
 /* MAIN BODY SECTION - INDEX.HTML */
 /************************************/
@@ -99,6 +93,11 @@ a:link {
 body {
   margin-left: .5%;
   margin-right: .5%;
+  font-family: 'Josefin Sans';
+}
+
+h1, h2, h4, h5 {
+  font-family: 'Josefin Sans';
 }
 
 h3 {
@@ -111,30 +110,35 @@ h3 {
 
 .font-style {
   font-size: 2em;
-}
-
-.font-style a:link {
   color: #FF7CA7;
-}
-
-.font-style a:hover {
-  color: #4fb1cc;;
 }
 
 .flash-notice {
   color: red;
 }
 
-.style_image {
-  width: 8%;
-  height: 8%;
-   border: 5px solid #4fb1cc;
+.style-image {
+  width: 40%;
+  height: 40%;
+  border: 7px solid #4fb1cc;
 }
 
-/************************************/
-/* FOOTER */
-/************************************/
+.style-index {
+  padding-top: 10%;
+}
 
-footer p {
-  float: left;
+.font-index {
+  color: #FF7CA7;
+}
+
+.first-half {
+  padding-left: 10%;
+}
+
+.second-half {
+  padding-top: 5%;
+}
+
+.second-half ul li {
+    display: block;
 }

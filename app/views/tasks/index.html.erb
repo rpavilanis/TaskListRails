@@ -5,13 +5,11 @@
 
 <section>
   <ul>
-    <li class="font-style">
+    <li>
       <% if task.completion_status == true %>
-        <strike><%= label_tag(task.completion_status, link_to(task.title, show_path(task.id))
-        ) %></strike>
+        <strike><%= label_tag(task.completion_status, link_to(task.title, show_path(task.id), :class => "font-style")) %></strike>
       <% else %>
-        <%= label_tag(task.completion_status, link_to(task.title, show_path(task.id))
-        ) %>
+        <%= label_tag(task.completion_status, link_to(task.title, show_path(task.id), :class => "font-style")) %>
       <% end %>
     </li>
 
