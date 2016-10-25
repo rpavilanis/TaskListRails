@@ -7,10 +7,35 @@ ada:
   email: "ada@adadevelopersacademy.org"
   provider: github
 
-
 lisa:
   id: 2
   user_id: 12555
   name: "Lisa"
   email: "lisa@adadevelopersacademy.org"
+  provider: github
+
+normal_user:
+  id: 3
+  user_id: 12325
+  name: "Linda"
+  email: "linda@adadevelopersacademy.org"
+  provider: github
+
+user_without_email:
+  id: 4
+  user_id: 12327
+  name: "Alice"
+  provider: github
+
+
+user_without_provider:
+  id: 5
+  user_id: 12329
+  name: "Alcide"
+  email: "alcide@adadevelopersacademy.org"
+
+user_without_name:
+  id: 6
+  user_id: 12329
+  email: "alicelady@adadevelopersacademy.org"
   provider: github
