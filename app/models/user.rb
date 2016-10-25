@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_many :tasks
-  validates :email, :name, :user_id, :provider, presence: true
+  validates :email, :name, :provider, presence: true
+  validates_uniqueness_of :email
 
   def self.build_from_github(auth_hash)
     user       = User.new
