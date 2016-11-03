@@ -1,6 +1,6 @@
 <% if @user %>
   <h3>Edit Task</h3>
-  <%= render partial: "form", locals: {action_name: "update", params: {id: @task.id, person_id: params[:person_id]}} %>
+  <%= render partial: "form", locals: {action_name: "update", params: {id: @task.id, user_id: params[:user_id]}} %>
 <% else %>
   <h2>Please login before attempting to edit a new task!</h2>
 <% end %>

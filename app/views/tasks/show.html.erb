@@ -10,8 +10,8 @@
 
   <h4> Completed Time and Date: <%= @task.completed_at %></h4>
   <ul>
-    <li><%= button_to 'Edit', edit_path(@task.id, params[:person_id]), :class => 'button', method: :get %></li>
-    <li><%= button_to 'Delete', delete_path(@task.id, params[:person_id]), :class => 'button',
+    <li><%= button_to 'Edit', edit_path(@task.id, params[:user_id]), :class => 'button', method: :get %></li>
+    <li><%= button_to 'Delete', delete_path(@task.id, params[:user_id]), :class => 'button',
           method: :delete,
           data: { confirm: 'Are you sure?' } %></li>
   </ul>
