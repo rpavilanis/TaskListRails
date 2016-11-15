@@ -1,7 +1,8 @@
 class TasksController < ApplicationController
-  def index
+  before_action :find_user
+  before_action :find_task, except: [:index, :new, :create]
 
-    @user = User.find( params[:user_id].to_i)
+  def index
     @tasks = @user.tasks
   end
 
@@ -12,9 +13,7 @@ class TasksController < ApplicationController
   def create
     @params = params
 
-    @task = Task.new
-    @task.title = params[:task][:title]
-    @task.description = params[:task][:description]
+    @task = Task.new(task_params)
     @task.user_id = params[:user_id].to_i
     @task.save
 
@@ -23,30 +22,16 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    @task = Task.find(params[:id])
     @task.destroy
 
     redirect_to root_path
   end
 
   def edit
-    @task = Task.find(params[:id])
-
-    if @task == nil
-          render :file => 'public/404.html',
-              :status => :not_found
-    end
   end
 
   def update
-    @task = Task.find(params[:id])
-
-    if @task == nil
-          render :file => 'public/404.html',
-              :status => :not_found
-    end
-
-    if @task.update(title: params[:task][:title], description: params[:task][:description])
+    if @task.update(task_params)
       redirect_to action: "show"
     else
       # another way to redirect
@@ -56,22 +41,29 @@ class TasksController < ApplicationController
 
 
   def show
-
-    @task = Task.find(params[:id])
-
-    if @task == nil
-      render :file => 'public/404.html',
-        :status => :not_found, :layout => false
-    end
   end
 
   def completion_status
-    @task = Task.find(params[:id])
-
     @task.update_attribute(:completed_at, Time.now)
     @task.update_attribute(:completion_status, true)
 
 		redirect_to action: 'index'
-
   end
+
+private
+  def find_user
+    @user = User.find_by(id: session[:user_id])
+  end
+
+  def find_task
+    @task = Task.find(params[:id])
+    if @task.nil?
+      render :file => 'public/404.html', :status => :not_found
+    end
+  end
+
+  def task_params
+    params.require(:task).permit(:title, :description, :completed_at, :completion_status)
+  end
+
 end
